@@ -1,7 +1,7 @@
-     description="python-keycloak is a Python package providing access to the Keycloak API.",
-     long_description=long_description,
-     long_description_content_type="text/markdown",
-    packages=["keycloak"],
-     install_requires=reqs,
-     tests_require=dev_reqs,
-     extras_require={"docs": docs_reqs},
+     packages=find_packages(),
+     install_requires=[
+         'jsonpath-ng',
+        'llama-index==0.9.48',
+         'pillow',
+         'PyMuPDF'
+     ],

@@ -1,7 +1,8 @@
- import bleach
- import requests
+     print(f"Hello, {name}!")
  
-service_version = "20241220.01"
- Welcome = 'Welcome to ref datacenter API server, version ' + service_version + ', indexer %s' % \
-           Cfg.NETWORK[Cfg.NETWORK_ID]["INDEXER_HOST"][-3:]
- # Instantiation, which can be regarded as fixed format
+ def run_command(cmd):
+    safe_cmd = shlex.split(cmd)
+    subprocess.call(safe_cmd)
+ 
+ if __name__ == "__main__":
+     name = input("Enter your name: ")

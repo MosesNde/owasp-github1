@@ -1,13 +1,14 @@
- from flask import Flask, request, render_template, redirect, make_response
- import sqlite3
  import time
- from markupsafe import escape
- import os
- import subprocess
- @app.route('/execute', methods=['POST'])
- def execute():
-     command = request.form.get('command')
-    return subprocess.check_output(command, shell=True)
+ import json
+ from analyzer.PI_detection import VULPIXAnalyzer
+from tester.exceptions import TimeOutError, VULPIXAnalyzerError, ExternalInterfaceError, PaidAppError, resolve_exit_code
+ from interfaces.external import ExternalOutputInterface
+ import logging
  
- if __name__ == "__main__":
-     app.run(debug=True)
+ TIMEOUT_SEC = 5 * 60
+     else:
+         result_interface = ExternalOutputInterface()
+ 
+     cmd = [
+         'python3',
+         './monkey.py',
