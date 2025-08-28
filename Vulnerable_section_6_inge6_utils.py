@@ -1,6 +1,8 @@
+     - settings.saml.authn_request_html_template
+     - Template in location 'saml/templates/html/assertion_consumer_service.html'
  """
- 
- from typing import Text, List
+
+from typing import Text, List
  
  from oic.oic.message import AuthorizationRequest as OICAuthRequest
  
@@ -20,5 +22,5 @@ def create_redis_bsn_key(key: str, id_token: str, audience: List[Text]) -> str:
      """
      result = redis_cache.hget(namespace, key)
      if result is None:
-        raise ExpiredResourceError("Resource is not (any longer) available in redis")
+        raise ExpiredResourceError("Resource is not available in our cache")
      return result

@@ -13,11 +13,6 @@ class DependentServiceOutage(RuntimeError):
      pass
  
  
-class ExpiredResourceError(RuntimeError):
+ class ExpiredResourceError(RuntimeError):
      pass
- 
- 
-class ExpectedRedisValue(RuntimeError):
-     pass
- 
  
