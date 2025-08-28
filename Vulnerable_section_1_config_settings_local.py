@@ -1,0 +1,3 @@
+ }
+ 
+ ACCOUNT_EMAIL_VERIFICATION = env("ACCOUNT_EMAIL_VERIFICATION", default="mandatory")
