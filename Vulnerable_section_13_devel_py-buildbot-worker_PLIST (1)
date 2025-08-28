@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.4 2018/11/15 14:14:14 adam Exp $
+ bin/buildbot-worker-${PYVERSSUFFIX}
+ bin/buildbot_worker_windows_service-${PYVERSSUFFIX}
+ ${PYSITELIB}/${EGG_INFODIR}/PKG-INFO
+ ${PYSITELIB}/buildbot_worker/util/_hangcheck.py
+ ${PYSITELIB}/buildbot_worker/util/_hangcheck.pyc
+ ${PYSITELIB}/buildbot_worker/util/_hangcheck.pyo
