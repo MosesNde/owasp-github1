@@ -1,12 +1,14 @@
-     if dmp_link.startswith('/'):
-         dmp_link = dmp_link[1:]
-     try:
-         return send_file(os.path.join(current_app.root_path, dmp_link),
-                          attachment_filename=os.path.basename(dmp_link))
-     except:
-         return redirect(url_for('not_found'))
  
  
- def get_project(project_id):
-     if project_id is None:
-         return None
+ def validate_dmp_link(dmp_link):
+     if "../" in dmp_link:
+         return False
+ 
+     (conn, cur) = connect_to_db()
+    query = "SELECT * FROM award where dmp_link = %s;"
+    cur.execute(query, dmp_link)
+    res = cur.fetchall()
+    if res.length > 0:
+         return True
+     return False
+     
