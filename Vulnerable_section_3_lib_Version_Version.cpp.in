@@ -1,0 +1,10 @@
+     return "@GIT_COMMIT_SUBJECT@";
+   }
+   std::string GetCommitBody(void) {
+     return @GIT_COMMIT_BODY@;
+   }
+   std::string GetVersionString(void) {
+    return "@VERSION_STRING@";
+   }
+ 
+ 
